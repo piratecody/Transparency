@@ -5,7 +5,7 @@ import {Grid, CircularProgress} from '@material-ui/core';
 import Record from './Record/Record';
 import useStyles from './styles';
 
-const Records = () => {
+const Records = ({setCurrentId}) => {
     const records = useSelector((state) => state.records);
     const classes = useStyles();
     console.log(records);
@@ -16,7 +16,7 @@ const Records = () => {
                 {
                     records.map((record) => (
                         <Grid key={record._id} item xs={12} sm={6}>
-                            <Record record={record} />
+                            <Record record={record} setCurrentId={setCurrentId}/>
                         </Grid>
                     ))
                 }

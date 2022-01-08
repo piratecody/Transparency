@@ -8,20 +8,20 @@ import moment from 'moment';
 
 import useStyles from './styles';
 
-const Record = ({record}) => {
+const Record = ({record, setCurrentId}) => {
     const classes = useStyles();
     return(
         <Card className={classes.card}>
-            <div className={classes.overlay}>
+            <div>
                 <Typography variant="h6">{record.owner}</Typography>
                 
             </div>
-            <div className={classes.overlay2}>
-                <Button style={{color:"white"}} size="small" onClick={() => {}}>
+            <div>
+                <Button style={{color:"black"}} size="small" onClick={() => setCurrentId(record._id)}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
-            <div className={classes.details}>
+            <div>
                 <Typography variant="body2" color="textSecondary">{record.period}</Typography>
             </div>
         </Card>

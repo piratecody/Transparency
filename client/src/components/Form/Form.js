@@ -4,9 +4,9 @@ import FileBase from 'react-file-base64';
 import {useDispatch} from 'react-redux';
 
 import useStyles from './styles';
-import {createRecord} from '../../actions/records';
+import {createRecord, updateRecord, deleteRecord} from '../../actions/records';
 
-const Form = () => {
+const Form = ({currentId, setCurrentId}) => {
     const [recordData, setRecordData] = useState({
         owner: "",
         period: "",
@@ -22,7 +22,13 @@ const Form = () => {
 
         e.preventDefault();
 
-        dispatch(createRecord(recordData));
+        if(currentId){
+            dispatch(updateRecord(currentId, recordData));
+        } else {
+            dispatch(createRecord(recordData));
+        }
+
+        
         
     };
     const clear = () =>({
