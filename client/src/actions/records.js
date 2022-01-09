@@ -1,10 +1,11 @@
 import * as api from '../api';
+import * as actionTypes from '../constants/actionTypes';
 
 export const getRecords = () => async (dispatch) => {
 
     try{
         const { data } = await api.fetchRecords();
-        dispatch({type: "FETCH_ALL", payload: data});
+        dispatch({type: actionTypes.FETCH_ALL, payload: data});
     } catch (error){
         console.log(error);
     }
@@ -14,7 +15,7 @@ export const getRecords = () => async (dispatch) => {
 export const createRecord = (record) => async (dispatch) => {
     try{
         const {data} = await api.createRecord(record);
-        dispatch({type: "CREATE", payload: data})
+        dispatch({type: actionTypes.CREATE, payload: data})
     }catch(error){
         console.log(error);
     }
@@ -23,7 +24,7 @@ export const createRecord = (record) => async (dispatch) => {
 export const updateRecord = (id, record) => async (dispatch) => {
     try{
         const {data} = await api.updateRecord(id, record);
-        dispatch({type: "UPDATE", payload: data});
+        dispatch({type: actionTypes.UPDATE, payload: data});
     }catch(error){
         console.log(error);
     }
@@ -32,7 +33,7 @@ export const updateRecord = (id, record) => async (dispatch) => {
 export const deleteRecord = (id) => async (dispatch) => {
     try{
         await api.deleteRecord(id);
-        dispatch({type: "DELETE", payload: id});
+        dispatch({type: actionTypes.DELETE, payload: id});
     }catch(error){
         console.log(error);
     }
