@@ -1,4 +1,4 @@
-import { Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 import RecordMessage from '../models/recordMessage.js'
 
 export const getRecords = async (req, res)=>{
@@ -25,21 +25,23 @@ export const createRecord = async (req, res)=>{
 export const updateRecord = async (req, res)=>{
     const { id: _id } = req.params;
     const record = req.body;
-    if(!Mongoose.Types.ObjectId.isValid(_id)){
+    if(!mongoose.Types.ObjectId.isValid(_id)){
         return res.status(404).send('No post with that ID');
     }
-
-    const updatedRecord = await RecordMessage.findByIdAndUpdate(_id, record, {new:true});
+    
+    const updatedRecord = await RecordMessage.findByIdAndUpdate(_id, {...record, _id}, {new:true});
 
     res.json(updatedRecord);
 }
 
 export const deleteRecord = async (req, res)=>{
-    const record = req.body;
-    const newRecord = new RecordMessage(record);
+    const { id } = req.params;
+    if(!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(404).send('No post with that ID');
+    }
     try{
-        await newRecord.save();
-        res.status(201).json(newRecord);
+        await RecordMessage.findByIdAndRemove(id);
+        res.json({message: "Record deleted"});
     } catch(error){
         res.status(409).json({message: error});
     }

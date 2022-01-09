@@ -11,7 +11,7 @@ const Records = ({setCurrentId}) => {
     console.log(records);
     return(
         !records.length ? <CircularProgress /> : (
-            <Grid className={classes.mainContainer} container alightItems="stretch" spacing={3}>
+            <Grid className={classes.mainContainer} container alignItems="stretch" spacing={3}>
 
                 {
                     records.map((record) => (
