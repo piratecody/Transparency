@@ -1,10 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
+import * as styleConstants from '../../../constants/styleConstants';
 
 export default makeStyles({
   media: {
     height: 0,
     paddingTop: '56.25%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: styleConstants.CAROLINA_BLUE,
     backgroundBlendMode: 'darken',
   },
   border: {
@@ -20,6 +21,8 @@ export default makeStyles({
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
+    backgroundColor: styleConstants.EGGSHELL,
+    padding: '1em',
   },
   overlay: {
     position: 'absolute',
