@@ -6,6 +6,7 @@ import {getRecords} from './actions/records';
 import Form from './components/Form/Form';
 import Records from './components/Records/Records';
 import useStyles from './styles';
+import Navbar from './components/Navbar/Navbar';
 
 const App = () => {
     const [currentId, setCurrentId] = useState(null);
@@ -16,9 +17,9 @@ const App = () => {
     }, [currentId, dispatch]);
     return (
         <Container maxWidth="lg">
-            <AppBar className={classes.appBar} position="static" color="inherit">
-                <Typography className={classes.heading} variant="h2" align="center">Transparency</Typography>
-            </AppBar>
+            <Navbar>
+                
+            </Navbar>
             <Grow in>
                 <Container>
                     <Grid className={classes.mainContainer} container justifyContent="space-between" alignItems="stretch" spacing={4}>
