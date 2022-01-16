@@ -5,7 +5,7 @@ export default makeStyles({
   media: {
     height: 0,
     paddingTop: '56.25%',
-    backgroundColor: styleConstants.CAROLINA_BLUE,
+    backgroundColor: styleConstants.CELADON_BLUE,
     backgroundBlendMode: 'darken',
   },
   border: {
@@ -21,7 +21,7 @@ export default makeStyles({
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
-    backgroundColor: styleConstants.EGGSHELL,
+    backgroundColor: styleConstants.HONEYDEW,
     padding: '1em',
   },
   overlay: {

@@ -4,11 +4,17 @@ import * as styleConstants from '../../constants/styleConstants';
 export default makeStyles({
   appBar: {
     padding: '1em',
-    backgroundColor: styleConstants.CAROLINA_BLUE,
+    backgroundColor: styleConstants.PRUSSIAN_BLUE,
   },
   navLink:{
     textDecoration: "none",
     display: "flex",
+    '& .MuiButton-label': {
+      color: styleConstants.HONEYDEW,
+    },
+    '& :hover':{
+      color: styleConstants.IMPERIAL_RED,
+    }
   },
   logo: {
     display: "flex",

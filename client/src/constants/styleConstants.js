@@ -1,5 +1,5 @@
-export const RAISIN_BLACK = "#231f20ff";
-export const EGGSHELL = "#f3efe0ff";
-export const UPSDELL_RED = "#ad2831ff";
-export const TEAL_BLUE = "#2d728fff";
-export const CAROLINA_BLUE = "#5299d3ff";
+export const PRUSSIAN_BLUE = "#1d3557";
+export const HONEYDEW = "#F1FAEE";
+export const IMPERIAL_RED = "#e63946";
+export const POWDER_BLUE = "#a8dadc";
+export const CELADON_BLUE = "#457b9d";

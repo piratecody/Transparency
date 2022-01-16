@@ -60,8 +60,8 @@ const Form = ({currentId, setCurrentId}) => {
                 <div className={classes.fileInput}>
                     <FileBase type="file" multiple = {false} onDone ={({base64}) => setRecordData({...recordData, file: base64})}></FileBase>
                 </div>
-                <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-                <Button variant="contained" color="secondary" size="small" fullWidth onClick={clear}>Clear</Button>
+                <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth>Submit</Button>
+                <Button className={classes.buttonClear} variant="contained" size="small" fullWidth onClick={clear}>Clear</Button>
             </form>
         </Paper>
     );

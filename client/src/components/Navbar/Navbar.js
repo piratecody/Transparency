@@ -40,9 +40,9 @@ const Navbar = () => {
       <Container>
         <Box sx={{flexGrow:1, display: 'flex'}}>
           <Typography variant="h4" className={classes.logo} noWrap>Transparency</Typography>
-          <Link to="/" className={classes.navLink} sx={{ my: 2, color: 'white', display: 'block' }}><Button style={{color: "white"}} >Home</Button></Link>
-          <Link to="/about" className={classes.navLink}><Button style={{color: "white"}}>About</Button></Link>
-          <Link to="/records" className={classes.navLink}><Button style={{color: "white"}}>Records</Button></Link>
+          <Link to="/" className={classes.navLink} sx={{ my: 2, color: 'white', display: 'block' }}><Button>Home</Button></Link>
+          <Link to="/about" className={classes.navLink}><Button>About</Button></Link>
+          <Link to="/records" className={classes.navLink}><Button>Records</Button></Link>
         </Box>
       </Container>
     </AppBar>

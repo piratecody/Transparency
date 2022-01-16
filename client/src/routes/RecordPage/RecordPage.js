@@ -15,20 +15,22 @@ const RecordPage = () => {
         dispatch(getRecords());
     }, [currentId, dispatch]);
     return (
-        <Container maxWidth="lg">
-            <Grow in>
-                <Container>
-                    <Grid className={classes.mainContainer} container justifyContent="space-between" alignItems="stretch" spacing={4}>
-                        <Grid item xs={12} sm={7}>
-                            <Records setCurrentId={setCurrentId}/>
+        <main>
+            <Container maxWidth="lg">
+                <Grow in>
+                    <Container>
+                        <Grid className={classes.mainContainer} container justifyContent="space-between" alignItems="stretch" spacing={4}>
+                            <Grid item xs={12} sm={7}>
+                                <Records setCurrentId={setCurrentId}/>
+                            </Grid>
+                            <Grid item xs={12} sm={4}>
+                                <Form currentId={currentId} setCurrentId={setCurrentId}/>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Form currentId={currentId} setCurrentId={setCurrentId}/>
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Grow>
-        </Container>
+                    </Container>
+                </Grow>
+            </Container>
+        </main>
     )
 }
 

@@ -36,10 +36,10 @@ const Record = ({record, setCurrentId}) => {
                 
             </div>
             <div>
-                <Button style={{color:styleConstants.UPSDELL_RED}} size="small" onClick={() => dispatch(deleteRecord(record._id))}>
+                <Button style={{color:styleConstants.IMPERIAL_RED}} size="small" onClick={() => dispatch(deleteRecord(record._id))}>
                     <DeleteIcon></DeleteIcon>
                 </Button>
-                <Button style={{color:styleConstants.CAROLINA_BLUE, float:"right"}} size="small" onClick={() => setCurrentId(record._id)}>
+                <Button style={{color:styleConstants.CELADON_BLUE, float:"right"}} size="small" onClick={() => setCurrentId(record._id)}>
                     <EditIcon fontSize="medium" />
                 </Button>
             </div>

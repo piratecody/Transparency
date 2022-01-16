@@ -5,7 +5,7 @@ import useStyles from './styles';
 export default function AboutPage() {
   const classes = useStyles();
     return (
-      <main style={{ padding: "1rem 0" }}>
+      <main>
         <Container>
           <Paper className={classes.textContainer}>
             <Typography variant="h4">About</Typography>
