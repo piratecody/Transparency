@@ -9,14 +9,19 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import reducers from './reducers';
 import AboutPage from './routes/AboutPage/AboutPage';
 import RecordPage from './routes/RecordPage/RecordPage';
+import HomePage from './routes/HomePage/HomePage';
+import './index.css'
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 ReactDOM.render(
+
 <Provider store = {store}>
+
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App/>}>
+                <Route index element={<HomePage/>}/>
                 <Route path="about" element={<AboutPage />} />
                 <Route path="records" element={<RecordPage />}>
                     <Route path="basic" element={<RecordPage/>}/>
