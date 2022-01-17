@@ -4,7 +4,6 @@ import RecordMessage from '../models/recordMessage.js'
 export const getRecords = async (req, res)=>{
     try{
         const records = await RecordMessage.find();
-        console.log(records);
         res.status(200).json(records);
     } catch(error){
         res.status(404).json({message: error});
@@ -44,5 +43,14 @@ export const deleteRecord = async (req, res)=>{
         res.json({message: "Record deleted"});
     } catch(error){
         res.status(409).json({message: error});
+    }
+}
+
+export const getNumRecords = async (req, res)=>{
+    try{
+        const numRecords = await RecordMessage.countDocuments();
+        res.status(200).json(numRecords);
+    } catch(error){
+        res.status(404).json({message: error});
     }
 }

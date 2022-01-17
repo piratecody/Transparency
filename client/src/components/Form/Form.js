@@ -4,7 +4,7 @@ import FileBase from 'react-file-base64';
 import {useDispatch, useSelector} from 'react-redux';
 
 import useStyles from './styles';
-import {createRecord, updateRecord, deleteRecord} from '../../actions/records';
+import {createRecord, updateRecord} from '../../actions/records';
 
 const Form = ({currentId, setCurrentId}) => {
     const [recordData, setRecordData] = useState({

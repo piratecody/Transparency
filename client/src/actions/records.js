@@ -38,3 +38,15 @@ export const deleteRecord = (id) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const getNumRecords = () => async (dispatch) => {
+
+    try{
+        const { data } = await api.getNumRecords();
+        console.log(data);
+        dispatch({type: actionTypes.GET_NUM, payload: data});
+    } catch (error){
+        console.log(error);
+    }
+    
+}
