@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux';
 import {getRecords} from '../../actions/records';
 import Form from '../../components/Form/Form';
 import Records from '../../components/Records/Records';
+import FilterForm from '../../components/FilterForm/FilterForm';
 import useStyles from './styles';
 
 const RecordPage = () => {
@@ -19,6 +20,7 @@ const RecordPage = () => {
             <Container maxWidth="lg">
                 <Grow in>
                     <Container>
+                    <FilterForm/>
                         <Grid className={classes.mainContainer} container justifyContent="space-between" alignItems="stretch" spacing={4}>
                             <Grid item xs={12} sm={7}>
                                 <Records setCurrentId={setCurrentId}/>

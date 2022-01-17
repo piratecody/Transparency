@@ -27,18 +27,22 @@ export default makeStyles((theme) => ({
     textContainer: {
         padding: "1.5em",
         width: "100%",
+        display: "flex",
+        height: "65%",
     },
 
     homeCard:{
-        minWidth: "10%",
-        maxWidth: "20%",
         flexGrow: 1,
-        marginRight: "1rem",
+        marginRight: "3rem",
         backgroundColor: styleConstants.POWDER_BLUE,
+        textAlign: "center",
+        display: "flex",
+        justifyContent: "center",
     },
 
     cardRow: {
         display: "flex",
+        marginBottom: "2rem",
     }
       
 }));

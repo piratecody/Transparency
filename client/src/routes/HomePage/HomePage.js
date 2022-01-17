@@ -1,4 +1,4 @@
-import { Container, Typography, Paper, Card, CardContent, Box } from '@material-ui/core';
+import { Container, Typography, Paper, Card, CardContent, Box, Grid } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -25,19 +25,46 @@ export default function HomePage() {
         </div>
 
         <Container>
-          <Box className={classes.cardRow}>
-            <Card className={classes.homeCard}>
-              <CardContent>
-                <Typography>{numRecords}</Typography>
-              </CardContent>
-            </Card>
-            <Paper className={classes.textContainer}>
-              <Typography>Body</Typography>
-            </Paper>
-          </Box>
-
-          
+          <Grid container>
             
+            <Grid item xs={3}>
+              <Box className={classes.cardRow}>
+                <Card className={classes.homeCard}>
+                  <CardContent>
+                    <Typography variant="h4">Explore</Typography>
+                    <Typography variant="h2">{numRecords}</Typography>
+                    <Typography variant="h4">Records</Typography>
+                  </CardContent>
+                </Card>
+              </Box>
+            </Grid>
+
+            <Grid item xs={9}>
+              <Paper className={classes.textContainer}>
+                  <Typography>Body</Typography>
+              </Paper>
+            </Grid>
+
+            <Grid item xs={3}>
+              <Box className={classes.cardRow}>
+                <Card className={classes.homeCard}>
+                  <CardContent>
+                    <Typography variant="h4">Explore</Typography>
+                    <Typography variant="h2">{numRecords}</Typography>
+                    <Typography variant="h4">Records</Typography>
+                  </CardContent>
+                </Card>
+              </Box>
+            </Grid>
+
+            <Grid item xs={9}>
+              <Paper className={classes.textContainer}>
+                  <Typography>Body</Typography>
+              </Paper>
+            </Grid>
+
+            
+          </Grid>
         </Container>
         
       </main>
