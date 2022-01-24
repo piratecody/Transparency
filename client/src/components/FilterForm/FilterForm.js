@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {TextField, Button, Typography, Paper} from '@material-ui/core';
-import FileBase from 'react-file-base64';
+import {Button, Typography, Paper, TextField, Grid} from '@mui/material'
+import Autocomplete from '@mui/material/Autocomplete';
 import {useDispatch, useSelector} from 'react-redux';
 
 import useStyles from './styles';
-import {createRecord, updateRecord} from '../../actions/records';
 
 const FilterForm = ({currentId, setCurrentId}) => {
     const [recordData, setRecordData] = useState({
@@ -31,37 +30,51 @@ const FilterForm = ({currentId, setCurrentId}) => {
         e.preventDefault();
 
         if(currentId){
-            dispatch(updateRecord(currentId, recordData));
+            
         } else {
-            dispatch(createRecord(recordData));
+            
         }
 
-        clear();
-
-        
-        
     };
     const clear = () =>{
 
         setCurrentId(null);
         setRecordData({owner: '', period: '', year: '', office: '', municipality: '', file:''});
-
-
     };
+
+    const ownerOptions = [
+        {label: 'Citizens for Antaramian', owner: "Citizens for Antaramian"},
+    ]
+
     return(
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-                <Typography variant="h6">Filter Records</Typography>
-                <TextField name="owner" variant="outlined" label="Document Owner" fullWidth value={recordData.owner} onChange={(e) => setRecordData({...recordData, owner: e.target.value})}/>
-                <TextField name="period" variant="outlined" label="Filing Period" fullWidth value={recordData.period} onChange={(e) => setRecordData({...recordData, period: e.target.value})}/>
-                <TextField name="year" variant="outlined" label="Filing Year" fullWidth value={recordData.year} onChange={(e) => setRecordData({...recordData, year: e.target.value})}/>
-                <TextField name="office" variant="outlined" label="Office Sought" fullWidth value={recordData.office} onChange={(e) => setRecordData({...recordData, office: e.target.value})}/>
-                <TextField name="municipality" variant="outlined" label="Municipality" fullWidth value={recordData.municipality} onChange={(e) => setRecordData({...recordData, municipality: e.target.value})}/>
-                <div className={classes.fileInput}>
-                    <FileBase type="file" multiple = {false} onDone ={({base64}) => setRecordData({...recordData, file: base64})}></FileBase>
+                <div style={{width: "100%", textAlign:"center"}}>
+                    <Typography variant="h6">Filter Records</Typography>
                 </div>
-                <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth>Submit</Button>
-                <Button className={classes.buttonClear} variant="contained" size="small" fullWidth onClick={clear}>Clear</Button>
+
+                <div style={{width: "100%"}}>
+                    <Grid container>
+                        <Grid item xs={6}><Autocomplete options={ownerOptions} name="owner" variant="outlined" label="Document Owner" renderInput={(params) => <TextField {...params} label="Owner"/>}/></Grid>
+                        <Grid item xs={6}><Autocomplete options={ownerOptions} name="period" variant="outlined" label="Filing Period" renderInput={(params) => <TextField {...params} label="Filing Period" />}/></Grid>
+                        <Grid item xs={4}><Autocomplete options={ownerOptions} name="year" variant="outlined" label="Filing Year" renderInput={(params) => <TextField {...params} label="Filing Year" />}/></Grid>
+                        <Grid item xs={4}><Autocomplete options={ownerOptions} name="office" variant="outlined" label="Office Sought" renderInput={(params) => <TextField {...params} label="Office" />}/></Grid>
+                        <Grid item xs={4}><Autocomplete options={ownerOptions} name="municipality" variant="outlined" label="Municipality" renderInput={(params) => <TextField {...params} label="Municipality" />}/></Grid>
+                    
+                    
+
+                    
+                    </Grid>
+
+                    <div>
+                        <Grid container>
+                            <Grid item xs={6}><Button className={classes.buttonSubmit} variant="contained" size="large" type="submit">Filter</Button></Grid>
+                            <Grid item xs={6}><Button className={classes.buttonClear} variant="contained" size="large" onClick={clear}>Clear</Button></Grid>
+                        </Grid>
+                    </div>
+                    
+                </div>
+                
             </form>
         </Paper>
     );

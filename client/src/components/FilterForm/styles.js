@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
 import * as styleConstants from '../../constants/styleConstants';
 
 export default makeStyles((theme) => ({
@@ -6,28 +6,31 @@ export default makeStyles((theme) => ({
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
     },
+    '& .MuiAutocomplete-root':{
+      marginLeft: "1rem",
+      marginRight: "1rem",
+    },
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: styleConstants.HONEYDEW,
+    backgroundColor: styleConstants.HONEYDEW + " !important",
     height: "25%",
+    marginBottom: "1rem",
   },
   form: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
   },
-  fileInput: {
-    width: '97%',
-    margin: '10px 0',
-  },
   buttonSubmit: {
-    marginBottom: 10,
+    margin: "1rem",
     backgroundColor: styleConstants.CELADON_BLUE,
     color: styleConstants.HONEYDEW,
+    width: "100%",
   },
   buttonClear: {
-    backgroundColor: styleConstants.IMPERIAL_RED,
+    backgroundColor: styleConstants.IMPERIAL_RED + " !important",
     color: styleConstants.HONEYDEW,
+    width: "100%",
   },
 }));

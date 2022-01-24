@@ -1,15 +1,16 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import * as styleConstants from '../../constants/styleConstants';
 
 export default makeStyles({
   appBar: {
     padding: '1em',
-    backgroundColor: styleConstants.PRUSSIAN_BLUE,
+    backgroundColor: styleConstants.PRUSSIAN_BLUE  + " !important",
   },
   navLink:{
     textDecoration: "none",
     display: "flex",
-    '& .MuiButton-label': {
+    color: styleConstants.HONEYDEW,
+    '& .MuiButton-text': {
       color: styleConstants.HONEYDEW,
     },
     '& :hover':{

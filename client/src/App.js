@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { Container} from '@material-ui/core';
+import { Container} from '@mui/material';
 import {useDispatch} from 'react-redux';
 import { Outlet} from "react-router-dom";
-import { ThemeProvider, createTheme } from '@material-ui/core';
+import { ThemeProvider, createTheme } from '@mui/material';
 
 import {getRecords} from './actions/records';
 import Navbar from './components/Navbar/Navbar';

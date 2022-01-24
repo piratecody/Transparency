@@ -1,4 +1,4 @@
-import {makeStyles} from "@material-ui/core";
+import {makeStyles} from "@mui/styles";
 
 import headerImage from '../../assets/images/headerImage.jpg';
 import * as styleConstants from '../../constants/styleConstants';
