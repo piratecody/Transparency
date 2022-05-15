@@ -54,3 +54,15 @@ export const getNumRecords = async (req, res)=>{
         res.status(404).json({message: error});
     }
 }
+
+export const getFilteredRecords = async (req, res) => {
+    
+    let filter = new RecordMessage(req.body);
+    
+    try{
+
+
+    } catch(error){
+        res.status(404).json({message: error});
+    }
+}
