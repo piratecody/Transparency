@@ -1,4 +1,4 @@
-import { Container, Typography, Paper, Card, CardContent, Box, Grid } from '@material-ui/core';
+import { Container, Typography, Paper, Card, CardContent, Box, Grid } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 

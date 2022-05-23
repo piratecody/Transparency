@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {Grid, CircularProgress} from '@material-ui/core';
+import {Grid, CircularProgress} from '@mui/material';
 
 import Record from './Record/Record';
 import useStyles from './styles';

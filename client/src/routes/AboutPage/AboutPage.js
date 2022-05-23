@@ -1,4 +1,4 @@
-import {Container, Typography, Paper} from '@material-ui/core';
+import {Container, Typography, Paper} from '@mui/material';
 
 import useStyles from './styles';
 
